@@ -31,3 +31,5 @@ const Header = ({ onCreateModal }) => {
     </header>
   );
 };
+
+export default Header;
