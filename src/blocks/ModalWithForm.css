@@ -36,7 +36,6 @@
 .modal__labels {
   display: flex;
   flex-direction: column;
-  /* gap:24px,10px; */
 }
 
 .modal__label {
