@@ -84,7 +84,6 @@
 
 .modal__button {
   display: flex;
-  /* gap: 12px; */
 }
 
 .modal__button-input {
@@ -95,7 +94,6 @@
 }
 
 .modal__button-submit {
-  /* margin-bottom: 36px; */
   height: 36px;
   width: 124px;
   background-color: #000;
