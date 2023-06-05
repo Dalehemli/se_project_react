@@ -6,6 +6,7 @@ import ModalWithForm from "./ModalWithForm.js";
 import ItemModal from "./ItemModal";
 import { useEffect, useState } from "react";
 import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
+import "../blocks/Page.css";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -40,9 +41,13 @@ function App() {
     <div>
       <Header onCreateModal={handleCreateModal} temp={temp} />
       <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
-      <Footer />{" "}
+      <Footer />
       {activeModal === "create" && (
-        <ModalWithForm title="New Garment" onClose={handleCloseModal}>
+        <ModalWithForm
+          buttonText="Add Garment"
+          title="New Garment"
+          onClose={handleCloseModal}
+        >
           <div className="modal__labels">
             <label className="modal__label">
               Name
@@ -74,6 +79,7 @@ function App() {
                   type="radio"
                   id="hot"
                   value="hot"
+                  name="weather"
                 />
                 <label>Hot</label>
               </div>
@@ -83,6 +89,7 @@ function App() {
                   type="radio"
                   id="warm"
                   value="warm"
+                  name="weather"
                 />
                 <label>Warm</label>
               </div>
@@ -92,6 +99,7 @@ function App() {
                   type="radio"
                   id="cold"
                   value="cold"
+                  name="weather"
                 />
                 <label>Cold</label>
               </div>

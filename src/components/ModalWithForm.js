@@ -2,7 +2,7 @@ import "../blocks/ModalWithForm.css";
 
 const ModalWithForm = ({
   children,
-  buttonText = "Add garment",
+  buttonText, // = "Add garment",
   title,
   onClose,
   name,
@@ -19,7 +19,6 @@ const ModalWithForm = ({
         <form>
           {children}
           <button type="submit" className="modal__button-submit">
-            {" "}
             {buttonText}{" "}
           </button>
         </form>

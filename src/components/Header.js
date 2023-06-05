@@ -11,7 +11,6 @@ const Header = ({ onCreateModal }) => {
     <header className="header">
       <div className="header__logo">
         <div>
-          {" "}
           <img src={Logo} alt="Logo" />{" "}
         </div>
         <div className="header__date">{currentDate}, Greenville</div>
@@ -23,7 +22,6 @@ const Header = ({ onCreateModal }) => {
             type="text"
             onClick={onCreateModal}
           >
-            {" "}
             + Add Clothes
           </button>
         </div>
