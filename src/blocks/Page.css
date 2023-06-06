@@ -5,3 +5,8 @@
   margin: 0 auto;
   color: #000;
 }
+
+.page__wrapper {
+  background-color: #f3f3f3;
+  min-height: 100vh;
+}

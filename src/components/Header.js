@@ -1,5 +1,5 @@
 import "../blocks/Header.css";
-import Logo from "../images/logo.svg";
+import Logo from "../images/Logo.svg";
 import Avatar from "../images/avatar.svg";
 
 const Header = ({ onCreateModal }) => {
@@ -11,7 +11,7 @@ const Header = ({ onCreateModal }) => {
     <header className="header">
       <div className="header__logo">
         <div>
-          <img src={Logo} alt="Logo" />{" "}
+          <img src={Logo} alt="Logo" />
         </div>
         <div className="header__date">{currentDate}, Greenville</div>
       </div>

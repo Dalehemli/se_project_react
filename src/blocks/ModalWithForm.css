@@ -83,6 +83,7 @@
 
 .modal__button {
   display: flex;
+  gap: 11px;
 }
 
 .modal__button-input {
@@ -90,6 +91,8 @@
   height: 16px;
   margin: 2px 0 0;
   gap: 8px;
+  cursor: pointer;
+  accent-color: black;
 }
 
 .modal__button-submit {
@@ -103,6 +106,7 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
+  cursor: pointer;
 }
 
 .modal__button-submit:hover {
@@ -114,10 +118,17 @@
   height: 16px;
   width: 16px;
   border: none;
-  top: 16px;
-  right: 16px;
+  top: 23px;
+  right: 31px;
   background-color: transparent;
   position: absolute;
+  border: none;
+  z-index: 1;
+}
+
+.modal__button-close:hover {
+  cursor: pointer;
+  opacity: 0.6;
 }
 
 .modal__image-preview {
