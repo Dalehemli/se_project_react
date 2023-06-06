@@ -124,7 +124,9 @@
   position: absolute;
   border: none;
   z-index: 1;
+  box-shadow: none;
 }
+/* I've tried quite a few things to get the close button correct. Any suggestions? */
 
 .modal__button-close:hover {
   cursor: pointer;
