@@ -11,6 +11,8 @@ import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AddItemModal from "./AddItemModal";
+import * as api from "../utils/api";
+import DeleteConfirmModal from "./DeleteConfirmModal";
 import "../blocks/Page.css";
 
 function App() {

@@ -33,7 +33,7 @@ const Header = ({ onCreateModal }) => {
           </button>
         </div>
         <NavLink to="/profile">
-          <div className="header__name">Samee Allie</div>
+          <div className="header__name">Dale Hemli</div>
         </NavLink>
         <NavLink path="/profile">
           <div className="header__avatar">
