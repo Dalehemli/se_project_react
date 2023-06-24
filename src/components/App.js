@@ -1,6 +1,7 @@
 import "../blocks/App.css";
 import Header from "./Header.js";
 import Main from "./Main.js";
+import Profile from "./Profile";
 import Footer from "./Footer.js";
 import ModalWithForm from "./ModalWithForm.js";
 import ItemModal from "./ItemModal";
