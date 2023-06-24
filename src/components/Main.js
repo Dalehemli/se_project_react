@@ -1,11 +1,13 @@
-import { defaultClothingItems } from "../utils/constants";
 import WeatherCard from "./WeatherCard";
 import ItemCard from "./ItemCard";
-import { useMemo } from "react";
 import "../blocks/Main.css";
+import React, { useContext, useMemo } from "react";
+import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext";
+import { temperature } from "../utils/weatherApi";
 
-function Main({ weatherTemp, onSelectCard }) {
-  const getWeatherType = () => {
+function Main({ weatherTemp, onSelectedCard, clothingItems }) {
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
+  const weatherType = useMemo(() => {
     if (weatherTemp >= 86) {
       return "hot";
     } else if (weatherTemp >= 66 && weatherTemp <= 85) {
@@ -13,30 +15,32 @@ function Main({ weatherTemp, onSelectCard }) {
     } else if (weatherTemp <= 65) {
       return "cold";
     }
-  };
-  const weatherType = getWeatherType();
+  }, [weatherTemp]);
 
-  const filteredCards = defaultClothingItems.filter((item) => {
-    console.log(item);
-    return item.weather.toLowerCase() === weatherType;
+  const currentTemp = temperature(weatherTemp);
+  const currentTempString = currentTemp[currentTemperatureUnit];
+
+  const filteredCards = clothingItems.filter((card) => {
+    return card.weather.toLowerCase() === weatherType;
   });
-  console.log(filteredCards);
 
   return (
     <main className="main">
-      <WeatherCard day={false} type="cloudy" weatherTemp={weatherTemp} />
+      <WeatherCard day={true} type="sunny" weatherTemp={weatherTemp} />
       <section className="card__section" id="card-section">
-        Today is {weatherTemp}° F/ You may want to wear:
+        Today is {currentTempString} / You may want to wear:
         <div className="card__items">
-          {filteredCards.map((item) => {
-            return (
-              <ItemCard
-                key={item._id}
-                item={item}
-                onSelectCard={onSelectCard}
-              />
-            );
-          })}
+          {filteredCards?.map((card) => (
+            <ItemCard
+              key={card._id}
+              item={card}
+              onSelectedCard={onSelectedCard}
+              name={card.name}
+              weather={card.weather}
+              id={card.id}
+              link={card.link}
+            />
+          ))}
         </div>
       </section>
     </main>
