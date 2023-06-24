@@ -1,5 +1,6 @@
 import "../blocks/ModalWithForm.css";
 import closeButton from "../images/close.svg";
+import "../blocks/ItemModal.css";
 
 const ItemModal = ({ itemData, onClose, handleOpenConfirmModal }) => {
   return (
