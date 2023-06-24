@@ -1,5 +1,5 @@
 import "../blocks/Header.css";
-import Logo from "../images/logo.svg";
+import Logo from "../images/Logo.svg";
 import Avatar from "../images/avatar.svg";
 import ToggleSwitch from "./ToggleSwitch";
 import { NavLink } from "react-router-dom";
@@ -18,7 +18,7 @@ const Header = ({ onCreateModal }) => {
             <img src={Logo} alt="logo"></img>
           </div>
         </NavLink>
-        <div className="header__date">{currentDate}, Cape Town </div>
+        <div className="header__date">{currentDate}, Greenville </div>
       </div>
       <div className="header__avatar">
         <div className="header__slider"></div>

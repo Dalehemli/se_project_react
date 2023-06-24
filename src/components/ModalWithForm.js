@@ -3,22 +3,23 @@ import closeButton from "../images/close.svg";
 
 const ModalWithForm = ({
   children,
-  buttonText, // = "Add garment",
+  buttonText = "Add garment",
   title,
-  onClose,
+  onClick,
   name,
+  onSubmit,
 }) => {
   return (
     <div className={`modal modal__type_${name}`}>
       <div className="modal__content">
-        <button type="button" className="modal__button-close" onClick={onClose}>
+        <button type="button" className="modal__button-close" onClick={onClick}>
           <img src={closeButton} alt="close button" />
         </button>
         <h3 className="modal__title">{title}</h3>
-        <form>
+        <form onSubmit={onSubmit}>
           {children}
           <button type="submit" className="modal__button-submit">
-            {buttonText}{" "}
+            {buttonText}
           </button>
         </form>
       </div>
