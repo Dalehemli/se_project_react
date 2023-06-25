@@ -2,22 +2,19 @@ import "../blocks/ModalWithForm.css";
 import closeButton from "../images/close.svg";
 
 const DeleteConfirmModal = ({
-  handleCloseConfirmModal,
+  handleCloseModal,
   handleDeleteItem,
   selectedCard,
 }) => {
   const handleCancel = () => {
-    handleCloseConfirmModal();
+    handleCloseModal();
   };
   return (
     <div className="modal">
       <div className="modal__confirm-content">
         <div>Are you sure you want to delete this item?</div>
         <div>This action is irreversible.</div>
-        <button
-          className="modal__confirm-close"
-          onClick={handleCloseConfirmModal}
-        >
+        <button className="modal__confirm-close" onClick={handleCloseModal}>
           <img src={closeButton} alt="close-button" />
         </button>
         <div className="modal__buttons-confirm">
