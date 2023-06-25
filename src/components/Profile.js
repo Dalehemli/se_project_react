@@ -14,13 +14,13 @@ function Profile({ items, onSelectedCard, onCreateModal }) {
         <ClothesSection cards={items} onCreateModal={onCreateModal} />
         <section className="cards">
           <ul className="cards__list">
-            {items.map((card) => (
+            {items.map((card, index) => (
               <ItemCard
-                key={card._id}
+                key={index}
                 item={card}
                 name={card.name}
                 onSelectedCard={onSelectedCard}
-                id={card.id}
+                id={card._id}
                 weather={card.weather}
                 link={card.link}
               />
