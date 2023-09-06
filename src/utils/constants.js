@@ -1,34 +1,15 @@
-// import Sunny from "../images/day/Sunny.svg";
-// import Cloudy from "../images/day/Cloudy.svg";
-// import Rain from "../images/day/Rain.svg";
-// import Storm from "../images/day/Storm.svg";
-// import Snow from "../images/day/Snow.svg";
-// import Fog from "../images/day/Fog.svg";
-// import SunnyNight from "../images/night/SunnyNight.svg";
-// import CloudyNight from "../images/night/CloudyNight.svg";
-// import RainyNight from "../images/night/RainNight.svg";
-// import StormNight from "../images/night/StormNight.svg";
-// import SnowNight from "../images/night/SnowNight.svg";
-// import FogNight from "../images/night/FogNight.svg";
-
-// export const weatherOptions = [
-//   { url: Sunny, day: true, type: "sunny" },
-//   { url: Cloudy, day: true, type: "cloudy" },
-//   { url: Rain, day: true, type: "rain" },
-//   { url: Storm, day: true, type: "storm" },
-//   { url: Snow, day: true, type: "snow" },
-//   { url: Fog, day: true, type: "fog" },
-//   { url: SunnyNight, day: false, type: "sunny" },
-//   { url: CloudyNight, day: false, type: "cloudy" },
-//   { url: RainyNight, day: false, type: "rain" },
-//   { url: StormNight, day: false, type: "storm" },
-//   { url: SnowNight, day: false, type: "snow" },
-//   { url: FogNight, day: false, type: "fog" },
-// ];
-
 export const latitude = 34.84;
 export const longitude = -82.43;
 export const APIkey = "fff7c99584e6a3fa84367b9015f707de";
+
+export function _checkResponse(res) {
+  if (res.ok) {
+    return res.json();
+  }
+  return Promise.reject(`Error${res.status}`);
+}
+
+export const baseUrl = "http://localhost:3001";
 
 export const defaultClothingItems = [
   {
@@ -66,5 +47,48 @@ export const defaultClothingItems = [
     name: "Winter coat",
     weather: "cold",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
+  },
+];
+
+export const weatherOptions = [
+  { url: require("../images/day/Sunny.svg").default, day: true, type: "sunny" },
+  { url: require("../images/day/Storm.svg").default, day: true, type: "storm" },
+  { url: require("../images/day/Snow.svg").default, day: true, type: "snow" },
+  { url: require("../images/day/Rain.svg").default, day: true, type: "rain" },
+  { url: require("../images/day/Fog.svg").default, day: true, type: "fog" },
+  {
+    url: require("../images/day/Cloudy.svg").default,
+    day: true,
+    type: "cloudy",
+  },
+  {
+    url: require("../images/night/SunnyNight.svg").default,
+    day: false,
+    type: "sunny",
+  },
+  {
+    url: require("../images/night/StormNight.svg").default,
+    day: false,
+    type: "storm",
+  },
+  {
+    url: require("../images/night/SnowNight.svg").default,
+    day: false,
+    type: "snow",
+  },
+  {
+    url: require("../images/night/RainNight.svg").default,
+    day: false,
+    type: "rain",
+  },
+  {
+    url: require("../images/night/FogNight.svg").default,
+    day: false,
+    type: "fog",
+  },
+  {
+    url: require("../images/night/CloudyNight.svg").default,
+    day: false,
+    type: "cloudy",
   },
 ];
