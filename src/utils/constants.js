@@ -2,11 +2,12 @@ export const latitude = 34.84;
 export const longitude = -82.43;
 export const APIkey = "fff7c99584e6a3fa84367b9015f707de";
 
-export function _checkResponse(res) {
+export function checkResponse(res) {
   if (res.ok) {
     return res.json();
+  } else {
+    return Promise.reject(`Error: ${res.status}`);
   }
-  return Promise.reject(`Error${res.status}`);
 }
 
 export const baseUrl = "http://localhost:3001";

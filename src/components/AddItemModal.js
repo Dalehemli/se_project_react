@@ -1,53 +1,84 @@
-import React, { useState } from "react";
 import ModalWithForm from "./ModalWithForm";
-// import "../blocks/AddItemModal.css";
+import React, { useState } from "react";
 
-export default function AddItemModal({ onClose, isOpen, onAddItem }) {
-  const [name, setName] = useState("");
-  const [link, setLink] = useState("");
-  const [weatherType, setWeatherType] = useState("");
+const AddItemModal = ({
+  isOpen,
+  onAddItem,
+  handleCloseModal,
+  handleOutClick,
+  token,
+  isLoading,
+}) => {
+  const [nameValue, setNameValue] = useState("");
+  const [imageValue, setImageValue] = useState("");
+  const [weatherValue, setWeatherValue] = useState("");
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    onAddItem({ name, link, weatherType });
-  }
+  const buttonClasses = {
+    mainButton: "modal__add",
+    altButton: "modal__leave",
+  };
 
-  function handleWeatherType(e) {
-    setWeatherType(e.target.value);
-  }
-
-  function handleLink(e) {
-    setLink(e.target.value);
-  }
+  const buttonTexts = {
+    button: isLoading ? "Saving..." : "Add Garment",
+    other: null,
+  };
 
   React.useEffect(() => {
     if (isOpen) {
-      setName("");
-      setLink("");
-      setWeatherType("");
+      setNameValue("");
+      setImageValue("");
+      setWeatherValue("");
     }
   }, [isOpen]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const card = {};
+    card.name = nameValue;
+    card.imageUrl = imageValue;
+    card.weather = weatherValue;
+    onAddItem({
+      card,
+      token,
+    });
+  };
+
+  const onNameChange = (evt) => {
+    setNameValue(evt.target.value);
+  };
+
+  const onImageChange = (evt) => {
+    setImageValue(evt.target.value);
+  };
+
+  const onWeatherChange = (evt) => {
+    setWeatherValue(evt.target.value);
+  };
 
   return (
     <ModalWithForm
       title="New Garment"
-      onClick={onClose}
-      onSubmit={handleSubmit}
+      name="add"
+      onClose={handleCloseModal}
+      buttonText={buttonTexts}
+      onOutClick={handleOutClick}
+      handleSubmit={handleSubmit}
+      buttonClass={buttonClasses}
     >
-      <div className="modal__labels">
+      <fieldset className="modal__fieldset">
         <label className="modal__label">
           Name
           <input
             className="modal__input"
             type="text"
-            name="name"
-            minLength="1"
-            maxLength="30"
             placeholder="Name"
-            value={name}
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
+            required
+            name="name"
+            id="input-name"
+            minLength="1"
+            maxLength="300"
+            value={nameValue}
+            onChange={onNameChange}
           />
         </label>
         <label className="modal__label">
@@ -55,47 +86,56 @@ export default function AddItemModal({ onClose, isOpen, onAddItem }) {
           <input
             className="modal__input"
             type="url"
-            name="link"
-            minLength="1"
             placeholder="Image Url"
-            onChange={handleLink}
-            value={link}
+            required
+            name="imageUrl"
+            id="input-imageUrl"
+            value={imageValue}
+            onChange={onImageChange}
           />
         </label>
-      </div>
-      <p className="modal__paragraph">Select the weather type:</p>
-      <div className="modal__keys">
-        <div className="modal__key">
-          <input
-            className="modal__input-key"
-            type="radio"
-            id="hot"
-            value="hot"
-            onChange={handleWeatherType}
-          />
-          <label>Hot</label>
+        <p className="modal__text">Select the weather type:</p>
+        <div className="modal__input-container" onChange={onWeatherChange}>
+          <div>
+            <input
+              className="modal__input-button"
+              type="radio"
+              id="hot"
+              value="hot"
+              name="rangeOfTemp"
+            />
+            <label className="modal__temp-ranges" htmlFor="hot">
+              Hot
+            </label>
+          </div>
+          <div>
+            <input
+              className="modal__input-button"
+              type="radio"
+              id="warm"
+              value="warm"
+              name="rangeOfTemp"
+            />
+            <label className="modal__temp-ranges" htmlFor="warm">
+              Warm
+            </label>
+          </div>
+          <div>
+            <input
+              className="modal__input-button"
+              type="radio"
+              id="cold"
+              value="cold"
+              name="rangeOfTemp"
+            />
+            <label className="modal__temp-ranges" htmlFor="cold">
+              Cold
+            </label>
+          </div>
         </div>
-        <div className="modal__key">
-          <input
-            className="modal__input-key"
-            type="radio"
-            id="warm"
-            value="warm"
-            onChange={handleWeatherType}
-          />
-          <label>Warm</label>
-        </div>
-        <div className="modal__key">
-          <input
-            className="modal__input-key"
-            type="radio"
-            id="cold"
-            value="cold"
-            onChange={handleWeatherType}
-          />
-          <label>Cold</label>
-        </div>
-      </div>
+      </fieldset>
     </ModalWithForm>
   );
-}
+};
+
+export default AddItemModal;
