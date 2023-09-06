@@ -26,6 +26,10 @@
 //   { url: FogNight, day: false, type: "fog" },
 // ];
 
+export const latitude = 34.84;
+export const longitude = -82.43;
+export const APIkey = "fff7c99584e6a3fa84367b9015f707de";
+
 export const defaultClothingItems = [
   {
     _id: 0,
@@ -64,7 +68,3 @@ export const defaultClothingItems = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
   },
 ];
-
-// export const latitude = 34.84;
-// export const longitude = -82.43;
-// export const APIkey = "fff7c99584e6a3fa84367b9015f707de";

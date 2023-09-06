@@ -1,3 +1,4 @@
+import React, { useContext } from "react";
 import "../blocks/Header.css";
 import Logo from "../images/Logo.svg";
 import Avatar from "../images/avatar.svg";

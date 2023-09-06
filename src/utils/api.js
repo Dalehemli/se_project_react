@@ -5,8 +5,7 @@ function _checkResponse(res) {
   return Promise.reject(`Error${res.status}`);
 }
 
-const baseUrl =
-  "https://my-json-server.typicode.com/Dalehemli/se_project_react ";
+const baseUrl = "http://localhost:3001";
 
 export const getItems = () => {
   return fetch(`${baseUrl}/items`, {
