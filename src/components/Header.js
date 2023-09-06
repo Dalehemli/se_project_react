@@ -4,6 +4,7 @@ import Logo from "../images/Logo.svg";
 import Avatar from "../images/avatar.svg";
 import ToggleSwitch from "./ToggleSwitch";
 import { NavLink } from "react-router-dom";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 
 const Header = ({ onCreateModal }) => {
   const currentDate = new Date().toLocaleString("default", {
