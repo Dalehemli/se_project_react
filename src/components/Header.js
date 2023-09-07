@@ -87,7 +87,7 @@ const Header = ({
           <img className="header__logo" src={headerLogo} alt=" WTWR logo"></img>
         </NavLink>
         <p className="header__date" id="currentDate">
-          {currentDate}, Cape Town
+          {currentDate}, Greenville
         </p>
       </div>
       <button
