@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter, Route, useHistory } from "react-router-dom";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import Header from "./Header";
@@ -19,7 +19,7 @@ import RegisterModal from "./RegisterModal";
 import MobileMenu from "./MobileMenu";
 import LogoutModal from "./LogoutModal";
 import EditModal from "./EditModal";
-import { Routes } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import "../blocks/App.css";
 import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
@@ -35,7 +35,7 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   const [currentUser, setCurrentUser] = React.useState({});
   const [token, setToken] = React.useState("");
-  const history = useNavigate();
+  const history = useHistory();
   const [isLoading, setIsLoading] = React.useState(false);
   console.log(history);
 
@@ -309,7 +309,7 @@ const App = () => {
             handleRegister={handleRegisterClick}
             isLoggedIn={isLoggedIn}
           />
-          <Routes>
+          <Switch>
             <Route exact path="/">
               <Main
                 weatherTemp={temp}
@@ -332,7 +332,7 @@ const App = () => {
                 onUnlike={handleLikeClick}
               />
             </ProtectedRoute>
-          </Routes>
+          </Switch>
           <Footer />
           {activeModal === "add" && (
             <AddItemModal
