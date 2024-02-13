@@ -15,10 +15,7 @@ const ClothesSection = ({
   const currentUser = useContext(CurrentUserContext);
 
   // Filter cards based on the current weather type
-  const filteredCards = cards.filter(
-    (card) =>
-      card?.owner === currentUser._id && card.weatherType === weatherType
-  );
+  const filteredCards = cards.filter((card) => card?.owner === currentUser._id);
 
   return (
     <div className="profile__container">

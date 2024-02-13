@@ -3,6 +3,7 @@ import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitCon
 import WeatherCard from "../components/WeatherCard";
 import ItemCard from "./ItemCard";
 import { temperature } from "../utils/weatherApi";
+
 import "../blocks/Main.css";
 import "../blocks/Card.css";
 
@@ -12,6 +13,7 @@ function Main({
   onSelectCard,
   clothingItems,
   isLoggedIn,
+  filteredCards,
 }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
@@ -28,13 +30,8 @@ function Main({
   const weatherType = getWeatherType();
   const currentTemp = temperature(weatherTemp);
   const currentTempString = currentTemp[currentTemperatureUnit];
-  // Filter clothingItems based on weather temperature
   const filteredClothingItems = clothingItems.filter((item) => {
-    // Assuming each item has a property 'minTemperature' and 'maxTemperature'
-    const minTemp = item.minTemperature;
-    const maxTemp = item.maxTemperature;
-
-    return weatherTemp >= minTemp && weatherTemp <= maxTemp;
+    return item.weatherType === weatherType;
   });
 
   return (
