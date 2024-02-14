@@ -53,4 +53,4 @@ const ModalWithImage = ({
   );
 };
 
-export default ModalWithImage;
+export default ItemModal;
