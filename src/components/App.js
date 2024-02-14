@@ -20,7 +20,7 @@ import MobileMenu from "./MobileMenu";
 import LogoutModal from "./LogoutModal";
 import EditModal from "./EditModal";
 import { Switch } from "react-router-dom";
-import ItemModal from "./ItemModal";
+
 import "../blocks/App.css";
 import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
@@ -340,7 +340,7 @@ const App = () => {
             </ProtectedRoute>
           </Switch>
           <Footer />
-          <ItemModal />
+
           {activeModal === "add" && (
             <AddItemModal
               handleCloseModal={handleCloseModal}
