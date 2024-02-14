@@ -26,6 +26,11 @@ import "../blocks/WeatherCard.css";
 import "../blocks/MobileMenu.css";
 import "../blocks/ModalConfirm.css";
 import ItemModal from "./ItemModal";
+import "../blocks/Body.css";
+import "../blocks/ClothesSection.css";
+import "../blocks/ItemCards.css";
+import "../blocks/Page.css";
+import "../blocks/SideBar.css";
 
 const App = () => {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
