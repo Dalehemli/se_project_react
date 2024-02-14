@@ -25,7 +25,7 @@ import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
 import "../blocks/MobileMenu.css";
 import "../blocks/ModalConfirm.css";
-import ItemModal from "./ItemModal";
+import "./ItemModal";
 import "../blocks/Body.css";
 import "../blocks/ClothesSection.css";
 import "../blocks/ItemCards.css";
