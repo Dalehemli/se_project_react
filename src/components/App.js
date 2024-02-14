@@ -5,7 +5,7 @@ import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "../components/Footer";
-import ModalWithImage from "./ModalWithImage";
+import ItemModal from "./ItemModal";
 import ModalWithDeleteConfirm from "./ModalWithDeleteConfirm";
 import Profile from "../components/Profile";
 import AddItemModal from "./AddItemModal";
@@ -362,7 +362,7 @@ const App = () => {
             />
           )}
           {activeModal === "image" && (
-            <ModalWithImage
+            <ItemModal
               selectedCard={selectedCard}
               onClose={handleCloseModal}
               onDeleteClick={handleDelete}
