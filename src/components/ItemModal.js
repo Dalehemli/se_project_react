@@ -3,12 +3,7 @@ import closeIcon from "../images/close.svg";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import "../blocks/ItemModal.css";
 
-const ModalWithImage = ({
-  selectedCard,
-  onClose,
-  onOutClick,
-  onDeleteClick,
-}) => {
+const ItemModal = ({ selectedCard, onClose, onOutClick, onDeleteClick }) => {
   const currentUser = useContext(CurrentUserContext);
 
   const isOwn =
