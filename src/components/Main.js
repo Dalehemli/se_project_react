@@ -9,6 +9,7 @@ import "../blocks/Card.css";
 
 function Main({
   onLike,
+  onUnlike,
   weatherTemp,
   onSelectCard,
   clothingItems,
@@ -27,11 +28,11 @@ function Main({
     }
   };
 
-  const weatherType = getWeatherType();
+  const weather = getWeatherType();
   const currentTemp = temperature(weatherTemp);
   const currentTempString = currentTemp[currentTemperatureUnit];
   const filteredClothingItems = clothingItems.filter((item) => {
-    return item.weatherType === weatherType;
+    return item.weather === weather;
   });
 
   return (
@@ -52,6 +53,7 @@ function Main({
                   item={item}
                   onSelectCard={onSelectCard}
                   onLike={onLike}
+                  onUnlike={onUnlike}
                   isLoggedIn={isLoggedIn}
                 />
               ))}

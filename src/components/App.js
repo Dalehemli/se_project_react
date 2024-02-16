@@ -241,7 +241,9 @@ const App = () => {
 
     const token = localStorage.getItem("jwt");
 
-    if (!isLiked) {
+    // Determine whether to like or unlike based on the current state
+    if (isLiked) {
+      // If the item is already liked, unlike it
       itemsApi
         .unlike(id, currentUser?._id)
         .then(({ data: updatedCard }) => {
@@ -252,6 +254,7 @@ const App = () => {
         })
         .catch((err) => console.log(err));
     } else {
+      // If the item is not liked, like it
       itemsApi
         .like(id)
         .then((updatedCard) => {
@@ -322,8 +325,8 @@ const App = () => {
                 onSelectCard={handleSelectedCard}
                 clothingItems={clothingItems}
                 isLoggedIn={isLoggedIn}
-                onCardLike={handleLikeClick}
-                onCardUnlike={handleLikeClick}
+                onLike={handleLikeClick}
+                onUnlike={handleLikeClick}
               />
             </Route>
             <ProtectedRoute path="/profile" isLoggedIn={isLoggedIn}>
