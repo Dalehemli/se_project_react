@@ -12,6 +12,7 @@ const Profile = ({
   logoutClick,
   onLike,
   onUnlike,
+  currentUser,
 }) => {
   const [weatherType, setWeatherType] = useState("");
   useEffect(() => {
@@ -28,6 +29,7 @@ const Profile = ({
           isLoggedIn={isLoggedIn}
           editClick={editClick}
           logoutClick={logoutClick}
+          currentUser={currentUser}
         />
         <div className="profile__info"></div>
         <ClothesSection

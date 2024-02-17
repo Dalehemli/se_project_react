@@ -8,6 +8,7 @@
 .profile__content {
   margin: 0 40px 0 40px;
   display: flex;
+  overflow-x: hidden;
 }
 
 .profile__sidebar {

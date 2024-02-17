@@ -215,15 +215,8 @@ const App = () => {
       .updateCurrentUser({ name, avatarUrl })
       .then((data) => {
         setIsLoading(false);
-        // Update the currentUser context with the new data
-        setCurrentUser((prevUser) => ({
-          ...prevUser,
-          data: {
-            ...prevUser.data,
-            name: data.name,
-            avatar: data.avatarUrl,
-          },
-        }));
+        // Update the currentUser state with the new data
+        setCurrentUser(data);
         handleCloseModal();
       })
       .catch((error) => {
@@ -339,6 +332,7 @@ const App = () => {
                 logoutClick={handleSignoutClick}
                 onLike={handleLikeClick}
                 onUnlike={handleLikeClick}
+                currentUser={currentUser}
               />
             </ProtectedRoute>
           </Switch>
