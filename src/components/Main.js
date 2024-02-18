@@ -28,6 +28,9 @@ function Main({
     }
   };
 
+  //Hi, I was wondering if I could get any help with the like/dislike issue.
+  //I have been trying to get it working but haven't been able to figure out why
+
   const weather = getWeatherType();
   const currentTemp = temperature(weatherTemp);
   const currentTempString = currentTemp[currentTemperatureUnit];
