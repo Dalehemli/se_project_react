@@ -28,8 +28,8 @@ function Main({
     }
   };
 
-  //Hi, I was wondering if I could get any help with the like/dislike issue.
-  //I have been trying to get it working but haven't been able to figure out why
+  //Hi again, thank you for the tips on the liking and unliking issue.
+  //I was wondering if you could direct me to getting the avatar to change when editing?
 
   const weather = getWeatherType();
   const currentTemp = temperature(weatherTemp);
