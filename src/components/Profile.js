@@ -16,6 +16,8 @@ const Profile = ({
 }) => {
   const weatherType = weatherData?.weatherType || "";
 
+  //I'm assuming this is how you meant to use it?
+
   return (
     <section className="profile">
       <div className="profile__content">
