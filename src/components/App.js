@@ -212,7 +212,7 @@ const App = () => {
   const handleEditSubmit = ({ name, avatarUrl }) => {
     setIsLoading(true);
     userApi
-      .updateCurrentUser({ name, avatarUrl })
+      .updateCurrentUser({ name, avatar: avatarUrl })
       .then((data) => {
         setIsLoading(false);
         // Update the currentUser state with the new data
