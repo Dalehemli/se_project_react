@@ -332,7 +332,6 @@ const App = () => {
                 logoutClick={handleSignoutClick}
                 onLike={handleLikeClick}
                 onUnlike={handleLikeClick}
-                currentUser={currentUser}
               />
             </ProtectedRoute>
           </Switch>
