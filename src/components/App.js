@@ -332,7 +332,7 @@ const App = () => {
                 logoutClick={handleSignoutClick}
                 onLike={handleLikeClick}
                 onUnlike={handleLikeClick}
-                weatherData={temp}
+                weatherTemp={temp}
               />
             </ProtectedRoute>
           </Switch>

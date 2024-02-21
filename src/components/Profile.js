@@ -1,7 +1,7 @@
-// import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import SideBar from "./SideBar";
 import ClothesSection from "./ClothesSection";
-// import { getForecastWeather } from "../utils/weatherApi";
+import { getForecastWeather } from "../utils/weatherApi";
 
 const Profile = ({
   items,
@@ -12,11 +12,15 @@ const Profile = ({
   logoutClick,
   onLike,
   onUnlike,
-  weatherData,
+  weatherTemp,
 }) => {
-  const weatherType = weatherData?.weatherType || "";
-
-  //I'm assuming this is how you meant to use it?
+  // const [weatherType, setWeatherType] = useState("");
+  // useEffect(() => {
+  //   getForecastWeather().then((data) => {
+  //     const currentWeatherType = data.weather[0].main;
+  //     setWeatherType(currentWeatherType);
+  //   });
+  // }, []);
 
   return (
     <section className="profile">
@@ -34,7 +38,7 @@ const Profile = ({
           isLoggedIn={isLoggedIn}
           onLike={onLike}
           onUnlike={onUnlike}
-          weatherType={weatherType}
+          weatherTemp={weatherTemp}
         />
       </div>
     </section>
