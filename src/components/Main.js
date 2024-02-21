@@ -28,8 +28,7 @@ function Main({
     }
   };
 
-  //Hi again, thank you for the tips on the liking and unliking issue.
-  //I was wondering if you could direct me to getting the avatar to change when editing?
+  //I wanted to thank you for the help :)
 
   const weather = getWeatherType();
   const currentTemp = temperature(weatherTemp);
