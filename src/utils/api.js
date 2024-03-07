@@ -1,4 +1,9 @@
-import { baseUrl, checkResponse } from "./constants";
+import { checkResponse } from "./constants";
+
+const baseUrl =
+  process.env.NODE_ENV === "production "
+    ? "https://api.wtwrdenim.crabdance.com"
+    : "http://localhost:3001";
 
 const getItem = (key) => {
   try {
