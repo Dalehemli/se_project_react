@@ -19,7 +19,7 @@ const EditModal = ({ handleCloseModal, handleOutClick, handleEdit }) => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    const onUpdateProfile = { name, avatarUrl };
+    const onUpdateProfile = { name, avatar: avatarUrl };
     handleEdit(onUpdateProfile);
   };
 
