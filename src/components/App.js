@@ -215,7 +215,6 @@ const App = () => {
       .updateCurrentUser({ name, avatar: avatarUrl })
       .then((data) => {
         setIsLoading(false);
-        // Update the currentUser state with the new data
         setCurrentUser(data);
         handleCloseModal();
       })
